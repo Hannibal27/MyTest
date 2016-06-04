@@ -1,0 +1,17 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+	{% if g.user.is_authenticated %}
+	<h3>Bienvenido usuario: {{ g.user.nickname}}</h3>
+	<div class="card-panel">
+      <a href="/compras" class="blue-text text-darken-2">compras de hoy</a>
+    </div>
+    <div class="card-panel">
+      <a href="/productos" class="blue-text text-darken-2">Catalogo de productos</a>
+    </div>
+	{% else%}
+	<h3>Es necesario registrarse para ver esta página</h3>
+	{% endif%} 
+
+{% endblock %}
